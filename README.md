@@ -20,7 +20,7 @@ Your first goal should be creating a Book model and showing an index of all book
 - You should have initial data for books (a CSV is provided, but you can edit it to fit your data).
 - Books should be in order with the most recently added at the top.
 
-To load some initial books, you can [create a data migration](https://docs.djangoproject.com/en/2.1/topics/migrations/#data-migrations).
+To load some initial books, you can [create a data migration](https://docs.djangoproject.com/en/3.0/topics/migrations/#data-migrations).
 
 #### Stretch goals
 
