@@ -8,7 +8,7 @@ This week, you are building a Django application to collect an index of free pro
 
 - Your application should be styled. It should be usable and aesthetically neutral, at a minimum. There is a sample mockup of the index page in [mockup/index.html](mockup/index.html). You do not have to follow this mockup -- it's just a place to start if you don't have your own ideas.
 - When you are not sure about whether a feature is needed, use your knowledge of similar sites and your good sense.
-- Your application should be able to run from scratch by downloading the repo, running `pipenv install`, `python manage.py migrate`, and `python manage.py runserver`. There can be another step to load data -- just make sure to update this README to include that step.
+- Your application should be able to run from scratch by downloading the repo, running `poetry install`, `python manage.py migrate`, and `python manage.py runserver`. There can be another step to load data -- just make sure to update this README to include that step.
 
 ### Goal 1: books
 
@@ -24,10 +24,14 @@ To load some initial books, you can [create a data migration](https://docs.djang
 
 #### Stretch goals
 
-- Add an optional image for books.
+- Add an optional image url for books.
 - Allow users to change the order of books, ordering by title or by reverse order of being added.
 
-### Goal 2: associated categories
+### Goal 2: registration and login
+
+Your next goal is adding registration and login to your application. Change the flow of your application so that users have to log in to see their books.
+
+### Goal 3: associated categories
 
 Your next goal should be adding categories for books. Each book should be associated with a category.
 
@@ -37,10 +41,6 @@ Your next goal should be adding categories for books. Each book should be associ
 #### Stretch goals
 
 - Allow books to be in multiple categories.
-
-### Goal 3: registration and login
-
-Your next goal is adding registration and login to your application.
 
 ### Goal 4: user favorites
 
@@ -62,6 +62,30 @@ Users should be able to comment on books. Each book will need to have its own un
 
 Users should be able to suggest new books for Freeshelf. You can do this with a separate model or by using the Book model with a new boolean indicating whether the suggestion has been accepted or not. Either way, a new page, `/suggestions/`, should be available to admins, showing them all the current suggestions and allowing them to accept or decline the suggestion.
 
+## Project Setup
+
+This project was generated from the Momentum Django project template. This template sets up some minimal changes:
+
+- [django-extensions](https://django-extensions.readthedocs.io/en/latest/) and [django-debug-toolbar](https://django-debug-toolbar.readthedocs.io/en/latest/) are both installed and set up.
+- [django-environ](https://django-environ.readthedocs.io/en/latest/) is set up and the `DEBUG`, `SECRET_KEY`, and `DATABASES` settings are set by this package.
+- There is a custom user model defined in `users.models.User`.
+- There is a `templates/` and a `static/` directory at the top level, both of which are set up to be used.
+- A `.gitignore` file is provided.
+- [Poetry](https://python-poetry.org/) is used to manage dependencies.
+
+### Steps after cloning this project repo
+
+```
+> poetry install
+> cp freeshelf/.env.sample freeshelf/.env
+> poetry shell
+> ./manage.py migrate
+
+# to create an app directory with all the necessary files
+> python manage.py startapp <name-of-your-app>
+```
+
 ## Resources
 
 - [Free Programming Books Online](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md)
+
