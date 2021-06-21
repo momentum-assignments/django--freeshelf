@@ -8,24 +8,28 @@ This week, you are building a Django application to collect an index of free pro
 
 - Your application should be styled. It should be usable and aesthetically neutral, at a minimum. There is a sample mockup of the index page in [mockup/index.html](mockup/index.html). You do not have to follow this mockup -- it's just a place to start if you don't have your own ideas.
 - When you are not sure about whether a feature is needed, use your knowledge of similar sites and your good sense.
-- Your application should be able to run from scratch by downloading the repo, running `poetry install`, `python manage.py migrate`, and `python manage.py runserver`. There can be another step to load data -- just make sure to update this README to include that step.
+- A starterproject and app are provided, along with a custom user model and the accompanying migration.
 
 ### Goal 1: books
 
 Your first goal should be creating a Book model and showing an index of all books. Some details:
 
-- Books have, at a minimum, a title, author, description, URL, and date added to the database.
+- Books have, at a minimum, a title, author, description, URL, and date added to the database (`created_at`).
 - Book URLs (the URL field in the database) should be unique.
 - Admins can add, edit, and delete books.
 - You should have initial data for books (a CSV is provided, but you can edit it to fit your data).
-- Books should be in order with the most recently added at the top.
+- Books should be displayed in order with the most recently added at the top.
 
-To load some initial books, you can [create a data migration](https://docs.djangoproject.com/en/3.0/topics/migrations/#data-migrations).
+#### Initial Data
+
+To load some initial books into your database, you can [create a data migration](https://docs.djangoproject.com/en/3.0/topics/migrations/#data-migrations). Read the data from the CSV file and use your model to save data to the database. ([Another good resource on data migrations.](https://simpleisbetterthancomplex.com/tutorial/2017/09/26/how-to-create-django-data-migrations.html))
+
+You can also create books using the Django admin.
 
 #### Stretch goals
 
 - Add an optional image url for books.
-- Allow users to change the order of books, ordering by title or by reverse order of being added.
+- Allow users to change the sorting order of books, ordering by title or by reverse order of being added.
 
 ### Goal 2: registration and login
 
@@ -56,7 +60,7 @@ Users should be able to comment on books. Each book will need to have its own un
 
 #### Stretch goals
 
-- Make user names on comments links to a user profile page. This page should show all the comments the user has made across books.
+- Make user names on comments links to a user profile page. This page should show all the comments the user has made on all books.
 
 ### Bonus Goal 2: Users can suggest books
 
@@ -71,21 +75,19 @@ This project was generated from the Momentum Django project template. This templ
 - There is a custom user model defined in `users.models.User`.
 - There is a `templates/` and a `static/` directory at the top level, both of which are set up to be used.
 - A `.gitignore` file is provided.
-- [Poetry](https://python-poetry.org/) is used to manage dependencies.
+- [Pipenv](https://pipenv.pypa.io/en/latest/) is used to manage dependencies.
 
 ### Steps after cloning this project repo
 
-```
-> poetry install
-> cp freeshelf/.env.sample freeshelf/.env
-> poetry shell
+```sh
+> pipenv install
+> cp django_freeshelf/.env.sample django_freeshelf/.env
+> pipenv shell
 > ./manage.py migrate
-
-# to create an app directory with all the necessary files
-> python manage.py startapp <name-of-your-app>
+> ./manage.py createsuperuser # follow prompts to create a superuser
+> ./manage.py runserver
 ```
 
 ## Resources
 
-- [Free Programming Books Online](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md)
-
+- [Free Programming Books GitHub Repo](https://github.com/EbookFoundation/free-programming-books)
