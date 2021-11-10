@@ -80,12 +80,12 @@ This project was generated from the Momentum Django project template. This templ
 ### Steps after cloning this project repo
 
 ```sh
-> pipenv install
-> cp django_freeshelf/.env.sample django_freeshelf/.env
-> pipenv shell
-> ./manage.py migrate
-> ./manage.py createsuperuser # follow prompts to create a superuser
-> ./manage.py runserver
+$ pipenv install
+$ cp django_freeshelf/.env.sample django_freeshelf/.env
+$ pipenv shell
+$ ./manage.py migrate
+$ ./manage.py createsuperuser # follow prompts to create a superuser
+$ ./manage.py runserver
 ```
 
 ## Resources
