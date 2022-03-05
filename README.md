@@ -62,15 +62,15 @@ Once you have registration and login, users should be able to nark books as thei
 ### 🌶 Spicy Features
 
 If you reach the four goals above, challenge yourself to implement these additional features.
-### 🌶 Spicy Goal 1: Add user comments
+#### 🌶 Spicy Goal 1: Add user comments
 
 Users should be able to comment on books. Each book will need to have its own unique URL where you can see comments on the book. Comments should be in order from the oldest to the newest. On book listing pages (the main page and the category pages), the number of comments should be listed with the book.
 
-#### Stretch for 🌶 Goal 1
+##### Stretch for 🌶 Goal 1
 
 - Make user names on comments links to a user profile page. This page should show all the comments the user has made on all books.
 
-### 🌶 Spicy Goal 2: Users can suggest books
+#### 🌶 Spicy Goal 2: Users can suggest books
 
 Users should be able to suggest new books for Freeshelf. You can do this with a separate Suggestion model or by using the Book model with a new boolean indicating whether the suggestion has been accepted or not. Either way, a new page, `/suggestions/`, should be available to admins, showing them all the current suggestions and allowing them to accept or decline the suggestion.
 
