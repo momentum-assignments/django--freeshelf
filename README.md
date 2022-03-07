@@ -22,7 +22,7 @@ Your first goal should be creating a Book model and showing an index of all book
 
 #### Initial Data
 
-To load some initial books into your database, you can [create a data migration](https://docs.djangoproject.com/en/3.0/topics/migrations/#data-migrations). Read the data from the CSV file and use your model to save data to the database. ([Another good resource on data migrations.](https://simpleisbetterthancomplex.com/tutorial/2017/09/26/how-to-create-django-data-migrations.html))
+To load some initial books into your database, you can [create a data migration](https://docs.djangoproject.com/en/4.0/topics/migrations/#data-migrations). Read the data from the CSV file and use your model to save data to the database. ([Another good resource on data migrations.](https://simpleisbetterthancomplex.com/tutorial/2017/09/26/how-to-create-django-data-migrations.html))
 
 You can also create books using the Django admin.
 
